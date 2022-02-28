@@ -7,8 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="main"></div>
     <script>
-        alert('Hello world')
+        let str = `HELLO<br/>WORLD<br/>阿巴阿巴`;
+        let i = 0;
+        function init(){
+            let main = document.getElementById('main');
+            if(i<=str.length){
+                main.innerHTML = str.slice(0,i++) + `_`;
+                setTimeout('init()',100);
+            }else{
+                main.innerHTML = str;
+            }
+        }
+        init();
     </script>
 </body>
 </html>
